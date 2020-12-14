@@ -34,8 +34,8 @@
         android:id="@+id/valorTotal"
         android:layout_width="match_parent"
         android:layout_height="79dp"
-        android:ems="10"
+
         android:hint="@string/hintValorTotal"
-        android:inputType="number" />
+         />
 </LinearLayout>
 
