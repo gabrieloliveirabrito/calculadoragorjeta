@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView valorContaTextView; // mostra o valor da conta
     private TextView valorGorjetaTextView; //mostra o valor da gorjeta
     private TextView valorTotalTextView; // mostra o valor total da conta calculada
+    private TextView textoPorcentagemTextView; // mostra a porcentagem da gorjeta
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         valorContaTextView = (TextView)findViewById(R.id.valorConta);
         valorTotalTextView = (TextView)findViewById(R.id.valorTotal);
         valorGorjetaTextView = (TextView)findViewById(R.id.valorGorjeta);
+        textoPorcentagemTextView = (TextView)findViewById(R.id.textoPorcentagem);
 
         //zerando exibição na tela
         valorTotalTextView.setText(currencyFormat.format(0));
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             double total = vrConta + gorjeta;
             valorTotalTextView.setText(currencyFormat.format(total));
             valorGorjetaTextView.setText(currencyFormat.format(gorjeta));
+
+            textoPorcentagemTextView.setText(Math.round(percent * 100) + "%");
             //%
         }catch (Exception ex){
             String y = ex.getMessage();

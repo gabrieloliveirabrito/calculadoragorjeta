@@ -22,6 +22,14 @@
         android:max="30"
         android:progress="15" />
 
+    <TextView
+        android:id="@+id/textoPorcentagem"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:text="15%"
+        android:textAlignment="center"
+        />
+
     <EditText
         android:id="@+id/valorGorjeta"
         android:layout_width="match_parent"
